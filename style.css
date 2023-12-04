@@ -27,6 +27,19 @@ body{
     overflow: hidden;
     padding: 40px;
 }
+#error{
+    color: red;
+    font-weight: 900;
+    display: none;
+}
+.resultado{
+    color: #f6a269;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 5px;
+    display: none;
+
+}
 #sec_izq{
     background-color: #8bdabc;
     width: 50%;
@@ -44,6 +57,7 @@ input{
     padding: 12px 15px;
     border: none;
     background-color: #eee;
+    border-radius: 30px;
 }
 button{
     font-size: 15px;
@@ -55,6 +69,7 @@ button{
     color:#FFFFFF;
     text-transform: uppercase;
     transition: transform 20ms ease-in;
+    margin-top: 10%;
 }
 button:active{
     background-color:#ff7315;
