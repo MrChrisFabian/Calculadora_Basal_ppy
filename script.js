@@ -2,6 +2,9 @@ const CALCULAR = document.getElementById('calcular')
 const ERROR = document.getElementById('error')
 const FLUJO = document.getElementById('flu')
 const MANTENIMIENTO = document.getElementById('man')
+const LINEA1 = document.getElementById('LineaUno')
+const LINEA2 = document.getElementById('LineaDos')
+const LINEA3 = document.getElementById('LineaTres')
 
 CALCULAR.addEventListener('click', () => {
     const DATO = document.getElementById('peso').value
@@ -12,7 +15,7 @@ CALCULAR.addEventListener('click', () => {
         let mantenimiento = flujo / 24;
         let mPlusm = mantenimiento *1.5;
         FLUJO.innerHTML = flujo + ' cc/hr'
-        MANTENIMIENTO.innerHTML = 'm+m/2 ' + mPlusm + ' cc/hr'
+        MANTENIMIENTO.innerHTML = 'm+m/2 ' + Math.round(mPlusm) + ' cc/hr'
         FLUJO.style.display = 'block'
         MANTENIMIENTO.style.display = 'block'
     }
@@ -28,18 +31,32 @@ function calcFlujo(param1) {
     let aux;
     if(peso <= 10){
         flujo = peso*100;
+        LINEA1.innerHTML = "FLujo, se calcula por cada Kilogramo 100cc"
+        LINEA2.innetHTML = "El mantenimiento es el flujo divido en 24horas"
+        LINEA3.innerHTML = "m+m/2 ; es el mantenimiento mas su mitad dividido en 2"
     }
     else if(peso>10 && peso<=20){
         aux = peso-10;
         flujo = (aux*50) + (1000);
+
+        LINEA1.innerHTML = "FLujo, por cada Kilogramo 100cc hasta los primeros 10"
+        LINEA2.innetHTML = "Los Kilogramos restantes se calcula 50cc por cada uno"
+        LINEA3.innerHTML = "Mantenimiento es el flujo divido en 24horas"
     }
     else if(peso>20 && peso<30){
         aux = peso-20;
         flujo = (aux*20) + (1500);
+
+        LINEA1.innerHTML = "FLujo, por cada Kilogramo 100cc hasta los primeros 10"
+        LINEA2.innetHTML = "Por cada kg mayor a 20kg y menor de 30kg son 20cc "
+        LINEA3.innerHTML = "Mantenimiento es el flujo divido en 24horas"
     }
     else{
         let sc = ( (peso * 4) + 7) / (peso + 90)
         flujo = sc*1500
+        LINEA1.innerHTML = "Metodo Superficie Corporal"
+        LINEA2.innetHTML = "FLujo se calcula por Superficie Corporal multiplicado por 1500"
+        LINEA3.innerHTML = "Mantenimiento es el flujo divido en 24horas"
     }
-    return flujo
+    return Math.round(flujo)
 }
