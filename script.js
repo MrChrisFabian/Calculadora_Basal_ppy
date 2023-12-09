@@ -32,7 +32,7 @@ function calcFlujo(param1) {
     if(peso <= 10){
         flujo = peso*100;
         LINEA1.innerHTML = "FLujo, se calcula por cada Kilogramo 100cc"
-        LINEA2.innetHTML = "El mantenimiento es el flujo divido en 24horas"
+        LINEA2.innerHTML = "El mantenimiento es el flujo divido en 24horas"
         LINEA3.innerHTML = "m+m/2 ; es el mantenimiento mas su mitad dividido en 2"
     }
     else if(peso>10 && peso<=20){
@@ -40,7 +40,7 @@ function calcFlujo(param1) {
         flujo = (aux*50) + (1000);
 
         LINEA1.innerHTML = "FLujo, por cada Kilogramo 100cc hasta los primeros 10"
-        LINEA2.innetHTML = "Los Kilogramos restantes se calcula 50cc por cada uno"
+        LINEA2.innerHTML = "Los Kilogramos restantes se calcula 50cc por cada uno"
         LINEA3.innerHTML = "Mantenimiento es el flujo divido en 24horas"
     }
     else if(peso>20 && peso<30){
@@ -48,14 +48,14 @@ function calcFlujo(param1) {
         flujo = (aux*20) + (1500);
 
         LINEA1.innerHTML = "FLujo, por cada Kilogramo 100cc hasta los primeros 10"
-        LINEA2.innetHTML = "Por cada kg mayor a 20kg y menor de 30kg son 20cc "
+        LINEA2.innerHTML = "Por cada kg mayor a 20kg y menor de 30kg son 20cc "
         LINEA3.innerHTML = "Mantenimiento es el flujo divido en 24horas"
     }
     else{
         let sc = ( (peso * 4) + 7) / (peso + 90)
         flujo = sc*1500
         LINEA1.innerHTML = "Metodo Superficie Corporal"
-        LINEA2.innetHTML = "FLujo se calcula por Superficie Corporal multiplicado por 1500"
+        LINEA2.innerHTML = "FLujo se calcula por Superficie Corporal multiplicado por 1500"
         LINEA3.innerHTML = "Mantenimiento es el flujo divido en 24horas"
     }
     return Math.round(flujo)
