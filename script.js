@@ -1,10 +1,12 @@
 const CALCULAR = document.getElementById('calcular')
 const ERROR = document.getElementById('error')
-const FLUJO = document.getElementById('flu')
-const MANTENIMIENTO = document.getElementById('man')
+const VOLUMEN = document.getElementById('volumenD')
+const MANTENIMIENTO = document.getElementById('flu')
+const mantmasMant2 = document.getElementById('man')
 const LINEA1 = document.getElementById('LineaUno')
 const LINEA2 = document.getElementById('LineaDos')
 const LINEA3 = document.getElementById('LineaTres')
+
 
 CALCULAR.addEventListener('click', () => {
     const DATO = document.getElementById('peso').value
@@ -14,15 +16,18 @@ CALCULAR.addEventListener('click', () => {
         let flujo = calcFlujo(DATO);
         let mantenimiento = flujo / 24;
         let mPlusm = mantenimiento *1.5;
-        FLUJO.innerHTML = flujo + ' cc/hr'
-        MANTENIMIENTO.innerHTML = 'm+m/2 ' + Math.round(mPlusm) + ' cc/hr'
-        FLUJO.style.display = 'block'
+        VOLUMEN.innerHTML = flujo + 'cc'
+        MANTENIMIENTO.innerHTML = Math.round(mantenimiento) + ' cc/hr'
+        mantmasMant2.innerHTML = 'm+m/2 ' + Math.round(mPlusm) + ' cc/hr'
+        mantmasMant2.style.display = 'block'
         MANTENIMIENTO.style.display = 'block'
+        VOLUMEN.style.display = 'block'
     }
     else {
         ERROR.style.display = 'block'
-        FLUJO.style.display = 'none'
+        mantmasMant2.style.display = 'none'
         MANTENIMIENTO.style.display = 'none'
+        VOLUMEN.style.display = 'none'
     }
 })
 function calcFlujo(param1) {
