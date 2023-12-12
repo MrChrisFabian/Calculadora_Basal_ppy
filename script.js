@@ -26,7 +26,7 @@ CALCULAR.addEventListener('click', () => {
     }
 })
 function calcFlujo(peso) {
-    
+
     //Realizamos los calculos según la cantidad de kilogramos ingresado
     let flujo;
     let aux;
@@ -67,25 +67,21 @@ function metodoCalc(caso) {
             LINEA1.innerHTML = "Flujo, se calcula por cada Kilogramo 100cc"
             LINEA2.innerHTML = "El mantenimiento es el flujo divido en 24horas"
             LINEA3.innerHTML = "m+m/2 ; es el mantenimiento mas su mitad dividido en 2"
-            console.log('opcion 1')
             break
         case 2:
             LINEA1.innerHTML = "Flujo, por cada Kilogramo 100cc hasta los primeros 10"
             LINEA2.innerHTML = "Los Kilogramos restantes se calcula 50cc por cada uno"
             LINEA3.innerHTML = "Mantenimiento es el flujo divido en 24horas"
-            console.log('opcion 2')
             break
         case 3:
             LINEA1.innerHTML = "Flujo, por cada Kilogramo 100cc hasta los primeros 10"
             LINEA2.innerHTML = "Por cada kg mayor a 20kg y menor de 30kg son 20cc "
             LINEA3.innerHTML = "Mantenimiento es el flujo divido en 24horas"
-            console.log('opcion 3')
             break
         case 4:
             LINEA1.innerHTML = "Metodo Superficie Corporal"
             LINEA2.innerHTML = "Flujo se calcula por Superficie Corporal multiplicado por 1500"
             LINEA3.innerHTML = "Mantenimiento es el flujo divido en 24horas"
-            console.log('opcion 4')
             break
     }
 }
@@ -97,14 +93,14 @@ function mensajesError() {
     VOLUMEN.style.display = 'none'
 }
 function mensajesResultado() {
-// Se ocultan el mensaje de error y se muestran los resultados
+    // Se ocultan el mensaje de error y se muestran los resultados
     ERROR.style.display = 'none'
     mantmasMant2.style.display = 'block'
     MANTENIMIENTO.style.display = 'block'
     VOLUMEN.style.display = 'block'
 }
 function calcCompleto(peso) {
-// Realizamos el calculo para obtener, flujo, mantenimiento y mantemiento + (mantenimiento/2) para luego mostrarlo por pantalla
+    // Realizamos el calculo para obtener, flujo, mantenimiento y mantemiento + (mantenimiento/2) para luego mostrarlo por pantalla
     let flujo = calcFlujo(peso);
     let mantenimiento = flujo / 24;
     let mPlusm = mantenimiento * 1.5;
